@@ -115,12 +115,12 @@ export default function DashboardPortfolio() {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    },[userInfo])
+    } , [user._id])
 
 
 
     //Education Start
-    const [eduData, setEduData] = useState([])
+    // const [eduData, setEduData] = useState([])
 
     // useEffect(() => {
     //     getEducation()
@@ -545,7 +545,7 @@ export default function DashboardPortfolio() {
 
 
 
-                                {userInfo.experienceData?.map((experience) => (
+                                {userInfo.experienceData?.map((experience , i) => (
                                     <List>
 
                                         <ListItem alignItems="flex-start">
@@ -609,7 +609,7 @@ export default function DashboardPortfolio() {
                                                     cursor: 'pointer'
                                                 }}><FiEdit2 style={{ float: 'right', fontSize: '20px' }} /></button>
 
-                                            {editExperience && <EditExperience />}
+                                            {editExperience && <EditExperience expid={userInfo.projects[i]._id} experienceInfoEdit={() => setEditExperience(false)}/>}
 
                                         </ListItem>
                                         <Divider variant="inset" component="li" />

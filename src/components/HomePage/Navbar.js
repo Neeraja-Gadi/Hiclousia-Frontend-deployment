@@ -59,7 +59,7 @@ const Navbar = () => {
                 {
             user?
 
-              user?.recruiter == false?
+              user?.recruiter === false?
                 <button className='search-Icon' onClick={() => navigate("/SearchPreferences")}><SearchIcon  style={{ fontSize: '45px' , color: 'goldenrod' }} /></button>
               :
               <button className='search-Icon' onClick={() => navigate("/RecruiterSearch")}><SearchIcon  style={{ fontSize: '45px' , color: 'goldenrod' }} /></button>

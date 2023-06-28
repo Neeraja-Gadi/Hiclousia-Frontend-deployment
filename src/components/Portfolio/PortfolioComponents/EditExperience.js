@@ -9,9 +9,20 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { primarySkills, experienceTypes, companyTypes, location } from '../../../constraints/arrays';
 import OutlinedInput from '@mui/material/OutlinedInput'
+import {RiCloseCircleFill} from 'react-icons/ri'
 
+
+const user = JSON.parse(localStorage.getItem("userDetails"))
 
 const EditExperience = (props) => {
+
+    const Navigate = useNavigate();
+
+    //  console.log(user)
+    if (!user) Navigate("/login")
+
+    const [userInfo, setUserInfo] = useState([])
+
 
     const modalWrapper = {
 
@@ -68,7 +79,7 @@ const EditExperience = (props) => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    }, [user._id ,userInfo])
+    }, [])
 
     const [expData, setExpData] = useState({})
 
@@ -90,18 +101,11 @@ const EditExperience = (props) => {
             })
     }
 
-    const Navigate = useNavigate();
-
-    const user = JSON.parse(localStorage.getItem("userDetails"))
-    //  console.log(user)
-    if (!user) Navigate("/login")
-
-    const [userInfo, setUserInfo] = useState([])
-
+    
 
     useEffect(() => {
         getExperienceData()
-    }, [])
+    })
 
 
 //     //API things End
@@ -119,6 +123,8 @@ const EditExperience = (props) => {
 
                
                     <div style={feild}>
+                    <button style={{float: 'right',border: 'none', backgroundColor: 'transparent'}} 
+                        onClick={() => props.experienceInfoEdit(false)} ><RiCloseCircleFill style={{fontSize: '23px', color: 'rgb(22 102 197)'}}/></button>
 
                         <Box
                             mb={2}

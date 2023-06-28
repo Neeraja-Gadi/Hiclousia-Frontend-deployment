@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-import { primarySkills } from '../../../constraints/arrays'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
+// import { primarySkills } from '../../../constraints/arrays'
+// import OutlinedInput from '@mui/material/OutlinedInput'
+// import InputLabel from '@mui/material/InputLabel'
+// import FormControl from '@mui/material/FormControl'
 // import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import Select from 'react-select';
+// import MenuItem from '@mui/material/MenuItem'
+// import Select from 'react-select';
 import {RiCloseCircleFill} from 'react-icons/ri'
 
 
-const userId = JSON.parse(localStorage.getItem('userDetails'));
+// const userId = JSON.parse(localStorage.getItem('userDetails'));
 
 
 const EditProjects = (props) => {
@@ -69,7 +69,8 @@ const EditProjects = (props) => {
              
                     <div style={feild}>
 
-                        <button style={{float: 'right',border: 'none', backgroundColor: 'transparent'}} onClick={() => props.projectInfoEdit(false)} ><RiCloseCircleFill style={{fontSize: '23px', color: 'rgb(22 102 197)'}}/></button>
+                        <button style={{float: 'right',border: 'none', backgroundColor: 'transparent'}} 
+                        onClick={() => props.projectInfoEdit(false)} ><RiCloseCircleFill style={{fontSize: '23px', color: 'rgb(22 102 197)'}}/></button>
 
                         <Box
                             mb={1}
