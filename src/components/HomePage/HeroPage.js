@@ -11,6 +11,7 @@ function App() {
     setUser(JSON.parse(localStorage.getItem("userDetails")))
 
   }, [])
+  console.log(user)
 
   // function logOut() {
   //   localStorage.removeItem('userDetails');

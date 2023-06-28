@@ -5,8 +5,6 @@ import { TextField, Button, Box } from '@mui/material';
 // import AppBar from '@mui/material/AppBar';
 
 
-
-
 // eslint-disable-next-line no-unused-vars
 const user = JSON.parse(localStorage.getItem("userDetails"))
 const ForgotPassword = () => {

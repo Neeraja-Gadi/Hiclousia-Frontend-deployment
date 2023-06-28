@@ -6,7 +6,6 @@ import { primarySkills, location, jobRoles, sectors, salary, jobNature, educatio
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 
-
 const jobProfiles = Object.keys(jobRoles)
 const theme = createTheme();
 const StyledForm = styled('form')(({ theme }) => ({
@@ -19,6 +18,7 @@ const StyledForm = styled('form')(({ theme }) => ({
     width: '70ch',
   },
 }));
+
 const user = JSON.parse(localStorage.getItem('userDetails'));
 const TalentPreferenceForm = () => {
 

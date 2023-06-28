@@ -78,13 +78,14 @@ const EditExperience = (props) => {
             .then(response => response.json())
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
-        console.log(userInfo)
-    }, [])
+        
+    }, [user._id])
+    console.log(userInfo)
 
     const [expData, setExpData] = useState({})
 
     function getExperienceData() {
-        fetch(`http://localhost:8000/experience/63f229c2fcc41f1dc0ec4082`, {
+        fetch(`http://localhost:8000/experience/${props.expid}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

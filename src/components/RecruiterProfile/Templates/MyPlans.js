@@ -39,10 +39,11 @@ export default function MyPlans() {
             .then((data) => {
                 setPlanData(data.data);
                 console.log(data.data);
-                console.log(planData);
+               
             })
             .catch((err) => console.log(err));
-    }, []);
+    }, [user._id]);
+    console.log(planData);
 
     const recruiterInfo = { ...planData.recruiterInfo };
     const plansDetails = planData.plans || [];
@@ -214,7 +215,6 @@ export default function MyPlans() {
                                             display: 'flex',
                                             flexDirection: 'column',
                                             justifyContent: 'center',
-                                            alignItems: 'center',
                                             textAlign: 'center',
                                             padding: '2rem',
                                         }}

@@ -10,7 +10,7 @@ import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 // eslint-disable-next-line no-unused-vars
 
-import { yearofPassouts, educationLevels, authorities, discipline } from '../../../constraints/arrays'
+import {  educationLevels, authorities, discipline } from '../../../constraints/arrays'
 import MenuItem from '@mui/material/MenuItem'
 
 
