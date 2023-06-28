@@ -15,7 +15,6 @@ import {RiCloseCircleFill} from 'react-icons/ri'
 const userId = JSON.parse(localStorage.getItem('userDetails'));
 
 
-
 const EditProjects = (props) => {
 
     const modalWrapper = {
@@ -64,19 +63,10 @@ const EditProjects = (props) => {
         margin: '20px'
     }
 
-
-
-
-
-
-  
-
     return (
         <div style={modalWrapper}>
             <div style={modalContainer}>
-
-
-                
+             
                     <div style={feild}>
 
                         <button style={{float: 'right',border: 'none', backgroundColor: 'transparent'}} onClick={() => props.projectInfoEdit(false)} ><RiCloseCircleFill style={{fontSize: '23px', color: 'rgb(22 102 197)'}}/></button>
@@ -175,19 +165,11 @@ const EditProjects = (props) => {
                         </Box>
 
 
-                
-
-
-              
-
-
-
                         <Button variant="contained"  style={save}>save</Button>
                         <Button variant="contained" style={dele} >delete</Button>
 
                     </div>
                
-
                 <br />
 
             </div>

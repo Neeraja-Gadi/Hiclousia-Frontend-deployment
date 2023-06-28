@@ -11,11 +11,6 @@ import { primarySkills, experienceTypes, companyTypes, location } from '../../..
 import OutlinedInput from '@mui/material/OutlinedInput'
 
 
-
-
-
-
-
 const EditExperience = (props) => {
 
     const modalWrapper = {
@@ -73,7 +68,7 @@ const EditExperience = (props) => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    }, [])
+    }, [user._id ,userInfo])
 
     const [expData, setExpData] = useState({})
 

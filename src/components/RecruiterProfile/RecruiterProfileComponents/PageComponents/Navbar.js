@@ -1,14 +1,9 @@
 import React from 'react'
 import { styled } from '@mui/system'
-import Button from '@mui/material/Button'
 import { TfiAnnouncement } from 'react-icons/tfi'
 import { useState } from 'react'
 import JobPostForm from '../Forms/JobPostForm'
-import TalentPool from './TlentPool'
-import { FaHandPointRight } from 'react-icons/fa'
-
-
-
+// import { FaHandPointRight } from 'react-icons/fa'
 
 const useStyles = styled((theme) => ({
 

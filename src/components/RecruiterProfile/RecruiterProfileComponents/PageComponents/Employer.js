@@ -2,14 +2,11 @@ import * as React from 'react';
 import { useState, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -58,9 +55,10 @@ const defaultTheme = createTheme();
 export default function Album() {
 
     const navigate = useNavigate();
-    const { id, uId } = useParams()
-    const [form, setForm] = useState(false)
+    const { id} = useParams()
+    // const [form, setForm] = useState(false)
     // const [jobPost] = useState(false)
+    // eslint-disable-next-line no-unused-vars
     const [jobDescription, setJobDescription] = useState(false)
     const [getJobdetails, setGetJobdetails] = useState([]);
     useEffect(() => {
@@ -74,7 +72,7 @@ export default function Album() {
                 .catch(err => console.log(err));
         };
         fetchData();
-    }, []);
+    }, [id]);
     console.log(getJobdetails);
 
     return (

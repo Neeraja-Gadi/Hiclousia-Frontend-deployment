@@ -8,7 +8,7 @@ function Third()
     return (
         <div className="career">
             <div className="career-image">
-                <img src={second}/>
+                <img alt= "second" src={second}/>
             </div>
             <div className="career-desc">
                 <div className="career-buttons">

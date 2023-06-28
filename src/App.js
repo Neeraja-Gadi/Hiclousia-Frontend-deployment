@@ -44,12 +44,10 @@ function App() {
                     <Fifth />
                 </>} />
 
-
                 <Route path="Login" element={<Login />} />
                 <Route path="SignUp" element={<SignUp />} />
                 <Route path='ForgotPassword' element={<ForgotPassword />} />
-                <Route path='ResetPassword' element={<ResetPassword />} />
-
+                <Route path='resetPassword/:id/:token' element={<ResetPassword />} />
                 <Route path='UserProfileForm' element={<UserProfileForm />} />
                 <Route path="UserProfile" element={<UserProfile />} />
                 <Route path="EducationForm" element={<EducationForm />} />
@@ -59,32 +57,22 @@ function App() {
                 <Route path="RecruiterSearch" element={<RecruiterSearch />} />
                 <Route path="RecruiterForm" element={<RecruiterProfileForm />} />
                 <Route path="SearchPreferences" element={<Dashboard />} />
+                <Route path='SearchResult' element={<SearchResult />} />
+                <Route path='SeacrhedItems' element={<SearchedItems />} />
                 <Route path='Portfolio' element={<DashboardPortfolio />} />
                 <Route path='SubscriptionModal' element={<Pricing />} />
-                <Route path='JobPost' element={<JobPost />} />
-                <Route path='SearchResult' element={<SearchResult />} />
+                <Route path='JobPost' element={<JobPost />} />            
                 <Route path='RecruiterProfilePage' element={<RecruiterProfilePage />} />
-                <Route path='TalentPoolNew' element={<TalentPoolNew />} />
+                {/* <Route path='TalentPoolNew' element={<TalentPoolNew />} /> */}
                 <Route path='MyPlans' element={<MyPlans />} />
                 <Route path='RecProfile' element={<RecProfile />} />
-                <Route path='SeacrhedItems' element={<SearchedItems />} />
-
-                {/* <Route path='Search' element={<Search />} /> */}
-
-
-                <Route path='resetPassword/:id/:token' element={<ResetPassword />} />
-                
-
+                {/* <Route path='Search' element={<Search />} /> */}                
                 <Route path="/Employer/:uId/:id" element={<Employer />} />
                 <Route path='TalentPoolNew/:jid' element={<TalentPoolNew />} />
 
-                {/* <Route path=  "JobPostForm" element = {<JobPostForm/>}/> */}
-                {/* <Route path="JobForm" element={<JobForm />} /> */}
-                {/* <Route path=  "multiform7" element = {<Form/>}/> */}
             </Routes>
 
         </div>
     )
 }
 export default App;
-

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { styled } from '@mui/system';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -61,16 +61,6 @@ function RecruiterSearch() {
     }
 
     const searchRes = function () {
-
-    //     fetch(`http://localhost:8000/recruiter?${RecruiterId}`)
-    //     .then(response => response.json()
-    //         .then(data => {
-    //             setRecruiterInfo(data.data)
-    //             console.log(data)
-               
-    //         })
-    //         .catch(err => console.log(err)));
-    // console.log(recruiterInfo);
 
         fetch(`http://localhost:8000/allusers?${filter}=${query}`)
             .then(response => response.json()

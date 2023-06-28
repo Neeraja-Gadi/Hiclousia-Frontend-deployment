@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/system';
-import { Button, FormControl, InputLabel, MenuItem, OutlinedInput, Select, TextField, Typography } from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, OutlinedInput, Select, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { primarySkills, location, jobRoles, sectors, salary, jobNature, educationLevels, experiences } from '../../../constraints/arrays';
 import Box from '@mui/material/Box';
+import { useNavigate } from 'react-router-dom';
+
 
 const jobProfiles = Object.keys(jobRoles)
 const theme = createTheme();
@@ -19,6 +21,9 @@ const StyledForm = styled('form')(({ theme }) => ({
 }));
 const user = JSON.parse(localStorage.getItem('userDetails'));
 const TalentPreferenceForm = () => {
+
+  const navigate = useNavigate();
+
   const [formValues, setFormValues] = useState({
     userDetailsID: user._id,
     highestEducation: '',
@@ -42,6 +47,8 @@ const TalentPreferenceForm = () => {
     console.log(formValues);
     savePreference(formValues);
     alert('Preferences submitted successfully');
+    navigate("/SearchResult")
+
   };
 
   const savePreference = async (formData) => {
@@ -66,7 +73,7 @@ const TalentPreferenceForm = () => {
   return (
     <ThemeProvider theme={theme}>
       <StyledForm onSubmit={handleSubmit}>
-        <Typography textAlign="center" variant="h6" gutterBottom>
+        <Typography textAlign="center" variant="h4" gutterBottom>
           Hey {user.firstName}, Tell us about your preferences
         </Typography>
 
@@ -80,6 +87,7 @@ const TalentPreferenceForm = () => {
               value={formValues.highestEducation}
               onChange={handleChange}
               label="Highest Education"
+              required
               input={<OutlinedInput label="Highest Education"/>}
             >
               {educationLevels.map((edulevel) => (
@@ -102,6 +110,7 @@ const TalentPreferenceForm = () => {
               value={formValues.jobRole}
               onChange={handleChange}
               label="Job Role"
+              required
               input={<OutlinedInput label="Job Role" />}
             >
               {jobProfiles.map((role) => (
@@ -112,7 +121,6 @@ const TalentPreferenceForm = () => {
             </Select>
           </FormControl>
         </Box>
-
 
         <Box>
           <FormControl sx={{ m: 3, width: 600 }}>
@@ -145,7 +153,6 @@ const TalentPreferenceForm = () => {
               label="Sector"
               name="sector"
               variant="outlined"
-              required
               value={formValues.sector}
               onChange={handleChange}
               input={<OutlinedInput label="Sector" />}
@@ -205,7 +212,6 @@ const TalentPreferenceForm = () => {
           </FormControl>
         </Box>
 
-
         <Box>
           <FormControl sx={{ m: 3, width: 600 }}>
             <InputLabel id="salary-label">salary</InputLabel>
@@ -252,7 +258,7 @@ const TalentPreferenceForm = () => {
           </FormControl>
         </Box>
 
-        <Button type="submit" variant="contained" color="primary" href='/SearchResult' style={{float: 'right', marginRight: '20px'}}>
+        <Button type="submit" variant="contained" color="primary"  style={{float: 'right', marginRight: '20px'}}>
           Submit
         </Button>
       </StyledForm>

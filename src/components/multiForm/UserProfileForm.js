@@ -12,7 +12,6 @@ const UserProfileForm = () => {
     const formField = {
         AlignItems: 'center',
         marginTop: '18px',
-        // backgroundColor: 'red',fgyfyhjmnyhyjmyhtyjhyf
         width: '87%',
         margin: '80px',
     };
@@ -39,12 +38,6 @@ const UserProfileForm = () => {
             location: ''
         }
     ]);
-
-
-
-
-
-
 
 
     const handlePersonalChange = (event, index) => {
@@ -107,25 +100,14 @@ const UserProfileForm = () => {
     }
 
 
-
-
-
-
-
     return (
         <>
 
             <div className="edu-Modal-container">
 
-
-
                 <h3 style={{ textAlign: 'center', marginTop: '25px', fontFamily: "'Arial', sans-serif", }}>Personal Information</h3>
 
                 <div className="edu-modal-form">
-
-
-
-
 
                     <form style={formField} onSubmit={handleSubmit} >
 

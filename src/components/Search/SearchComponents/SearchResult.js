@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React , {useState , useEffect} from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -18,9 +18,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems } from './List';
 import SearchedItems from './SearchedItems';
 import SearchAppBar from './Searchbar';
-
-
-
 
 
 const drawerWidth = 240;
@@ -71,8 +68,26 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
+const user = JSON.parse(localStorage.getItem('userDetails'));
 
 export default function SearchResult() {
+
+  const [recommendedJobs, setRecommendedJobs] = useState([]);
+
+useEffect(() => {
+     fetch(`http://localhost:8000/searchJobsByPreferences/${user._id}`)
+      .then(response => response.json())
+      .then(data => {
+        setRecommendedJobs(data.data);
+        console.log(recommendedJobs);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+}, [user._id]);
+
+
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
@@ -155,7 +170,7 @@ export default function SearchResult() {
                     <Toolbar />
                     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                         <Grid container spacing={3}>
-                            <SearchedItems />
+                            <SearchedItems  recommendedJobs={recommendedJobs}/>
                         </Grid>
                     </Container>
                 </Box>

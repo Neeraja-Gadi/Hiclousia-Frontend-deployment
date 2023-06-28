@@ -8,16 +8,13 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
+// eslint-disable-next-line no-unused-vars
+
 import { yearofPassouts, educationLevels, authorities, discipline } from '../../../constraints/arrays'
 import MenuItem from '@mui/material/MenuItem'
 
 
-
-
-
 const userId = JSON.parse(localStorage.getItem('userDetails'));
-
-
 
 const modalWrapper = {
 
@@ -135,22 +132,6 @@ const EducationPortfolio = (props) => {
 
         return true
     }
-
-
-    const handleAddEducation = () => {
-
-        setEducationList([...educationList, {
-            userDetailsID: userId._id,
-            educationLevel: '',
-            collegeName: '',
-            authority: '',
-            discipline: '',
-            yearOfpassout: '',
-            startYear: '',
-            endYear: ''
-        },
-        ]);
-    };
 
     const handleChange = (event, index) => {
 

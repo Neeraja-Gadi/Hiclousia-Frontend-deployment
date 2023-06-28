@@ -30,19 +30,19 @@ let location = ["Amaravati", "Anantapur", "Chandragiri", "Chittoor", "Dowlaiswar
   "Murshidabad", "Nabadwip", "Palashi", "Panihati", "Purulia", "Raiganj", "Santipur", "Shantiniketan", "Shrirampur", "Siliguri", "Siuri", "Tamluk", "Titagarh"]
 
 
-let jobRoles = ["Software Engineer", "Frontend", "Backend", "Fullstack Developer", "Director of Ethical Hacking", "Data Analyst", "Blockchain", "Web Devloper", "Android Developer", "Devops Developer", "UI/UX Design", "Digital Marketing", "CRM Specialist", "Business Analyst", "Financial Analyst", "Marketing Manager", "Marketing Director", "Graphic Designer", "Marketing Research Analyst", "Marketing Communications Manager", "Marketing Consultant", -"Store Manager", "Account Executive",
-  "Account Manager", "Area Sales Manager", "Direct Salesperson", "Director of Inside Sales", "Outside Sales Manager", "Sales Analyst", "Market Development Manager", "B2B Sales Specialist", "Sales Engineer",
-  "Merchandising Associate", "CEO", "Proprietor", "Principal", "Owner", "President", "Founder", "Administrator", "Director", "Managing Partner", "Managing Member", "Board of Directors", "Shareholders", "Managers",
-  "Supervisors", "Front Line Employees", "Quality Control", "Human Resources", "Accounting Staff", "Marketing Staff", "Purchasing Staff", "Shipping and Receiving Staff", "Office Manager", "Receptionist", "Virtual Assistant",
-  "Customer Service", "Customer Support", "Concierge", "Help Desk", "Customer Service Manager", "Technical Support Specialist", "Account Representative", "Client Service Specialist", "Customer Care Associate", "Operations Manager",
-  "Operations Assistant", "Operations Coordinator", "Oper", "Operations Director", "Vice President of Operations", "Operations Professional", "Scrum Master", "Continuous Improvement Lead", "Continuous Improvement Consultant",
-  "Credit Authorizer", "Benefits Manager", "Credit Counselor", "Accountant", "Bookkeeper", "Accounting Analyst", "Accounting Director", "Accounts Payable Receivable Clerk", "Auditor", "Budget Analyst", "Controller",
-  "Financial Analyst", "Finance Manager", "Economist", "Payroll Manager", "Payroll Clerk", "Financial Planner", "Financial Services Representative", "Finance Director", "Commercial Loan Office", "Engineer", "Mechanical Engineer",
-  "Civil Engineer", "Electrical Engineer", "Assistant Engineer", "Chemical Engineer", "Chief Engineer", "Drafter", "Engineering Technician", "Geological Engineer", "Biological Engineer", "Maintenance Engineer", "Mining Engineer",
-  "Nuclear Engineer", "Petroleum Engineer", "Plant Engineer", "Production Engineer", "Quality Engineer", "Safety Engineer", "Sales Engineer", "Chief People Officer", "VP of Miscellaneous Stuff", "Chief Robot Whisperer",
-  "Director of First Impressions", "Culture Operations Manager", "Director of Bean Counting", "Digital Overlord", "Director of Storytelling", "Researcher",
-  "Research Assistant", "Biostatistician", "Title Researcher", "Market Researcher", "Title Analyst", "Medical Researcher", "Mentor", "Online Tutor", "Teacher",
-  "Teaching Assistant", "Substitute Teacher", "Preschool Teacher", "Test Scorer", "Online ESL Instructor", "Professor", "Assistant Professor"]
+// let jobRoles = ["Software Engineer", "Frontend", "Backend", "Fullstack Developer", "Director of Ethical Hacking", "Data Analyst", "Blockchain", "Web Devloper", "Android Developer", "Devops Developer", "UI/UX Design", "Digital Marketing", "CRM Specialist", "Business Analyst", "Financial Analyst", "Marketing Manager", "Marketing Director", "Graphic Designer", "Marketing Research Analyst", "Marketing Communications Manager", "Marketing Consultant", -"Store Manager", "Account Executive",
+//   "Account Manager", "Area Sales Manager", "Direct Salesperson", "Director of Inside Sales", "Outside Sales Manager", "Sales Analyst", "Market Development Manager", "B2B Sales Specialist", "Sales Engineer",
+//   "Merchandising Associate", "CEO", "Proprietor", "Principal", "Owner", "President", "Founder", "Administrator", "Director", "Managing Partner", "Managing Member", "Board of Directors", "Shareholders", "Managers",
+//   "Supervisors", "Front Line Employees", "Quality Control", "Human Resources", "Accounting Staff", "Marketing Staff", "Purchasing Staff", "Shipping and Receiving Staff", "Office Manager", "Receptionist", "Virtual Assistant",
+//   "Customer Service", "Customer Support", "Concierge", "Help Desk", "Customer Service Manager", "Technical Support Specialist", "Account Representative", "Client Service Specialist", "Customer Care Associate", "Operations Manager",
+//   "Operations Assistant", "Operations Coordinator", "Oper", "Operations Director", "Vice President of Operations", "Operations Professional", "Scrum Master", "Continuous Improvement Lead", "Continuous Improvement Consultant",
+//   "Credit Authorizer", "Benefits Manager", "Credit Counselor", "Accountant", "Bookkeeper", "Accounting Analyst", "Accounting Director", "Accounts Payable Receivable Clerk", "Auditor", "Budget Analyst", "Controller",
+//   "Financial Analyst", "Finance Manager", "Economist", "Payroll Manager", "Payroll Clerk", "Financial Planner", "Financial Services Representative", "Finance Director", "Commercial Loan Office", "Engineer", "Mechanical Engineer",
+//   "Civil Engineer", "Electrical Engineer", "Assistant Engineer", "Chemical Engineer", "Chief Engineer", "Drafter", "Engineering Technician", "Geological Engineer", "Biological Engineer", "Maintenance Engineer", "Mining Engineer",
+//   "Nuclear Engineer", "Petroleum Engineer", "Plant Engineer", "Production Engineer", "Quality Engineer", "Safety Engineer", "Sales Engineer", "Chief People Officer", "VP of Miscellaneous Stuff", "Chief Robot Whisperer",
+//   "Director of First Impressions", "Culture Operations Manager", "Director of Bean Counting", "Digital Overlord", "Director of Storytelling", "Researcher",
+//   "Research Assistant", "Biostatistician", "Title Researcher", "Market Researcher", "Title Analyst", "Medical Researcher", "Mentor", "Online Tutor", "Teacher",
+//   "Teaching Assistant", "Substitute Teacher", "Preschool Teacher", "Test Scorer", "Online ESL Instructor", "Professor", "Assistant Professor"]
 
 
 let primarySkills = ["C", "Java", "Java Script", "Perl", "PHP", "Python", "Swift", "Go", "SQL", "R", "Ruby", "Google Suite", "Trello", "Slack", "Zapier", "Zoom", "JIRA", "Salesforce", "Budget planning", "Risk management",
@@ -178,12 +178,9 @@ let secondarySkills = [
   "Crisis managing"
 ];
 
-
-
 let sectors = [
   "Fishing industry",
   "Horticulture industry",
-
   "Wood industry",
   "Mechanical Manufacturing",
   "Aerospace industry",
@@ -239,8 +236,6 @@ let sectors = [
   "Sport industry",
   "Transport industry"
 ];
-
-
 
 
 let educationLevels = [
@@ -305,7 +300,7 @@ let experiences = [
 // ]
 
 let yearofPassouts = [
-  '2023', '2022', '2021', '2020'
+  '2023', '2022', '2021', '2020', "2019" ,"2018" , "2017", "2016" ,"2015"  , "2014" ,"2013" , "2012" , "2011"
 ]
 
 let authorities = [
@@ -325,13 +320,14 @@ let experienceTypes = [
 ]
 
 let jobNature = [
+  "Full Time",
+  "Part Time",
+  "WFH" ,
   "Onsite",
   "Remote",
   "Hybrid",
   "Intership",
-  "Full Time",
-  "Part Time",
-  "WFH"
+ 
 
 ]
 
@@ -426,6 +422,268 @@ let discipline = [
   "Human geography",
   "Cartography"
 ]
+
+let jobRoles = {
+  "Software Developer": [
+    "Web Developer",
+    "Java Developer",
+    "UX Designer",
+    "Net Developer",
+    "iOS Developer",
+    "Android Developer",
+    "SharePoint Developer",
+    "DevOps Engineer",
+    "Solutions Engineer",
+    "Ruby on Rails Developer",
+    "PHP Developer",
+    "Integration Engineer",
+    "Release Engineer",
+    "Embedded Software Engineer",
+    "Oracle Developer",
+    "Computer Scientist",
+    "JavaScript Developer",
+    "Web Analyst",
+    "Mainframe Developer",
+    "Platform Engineer",
+    "User Experience Researcher",
+    "Backend Developer",
+    "Systems Integration Engineer",
+    "Integration Developer",
+    "Applications Scientist",
+    "COBOL Programmer",
+    "Enterprise Engineer",
+    "Scientific Programmer",
+    "Lotus Notes Developer",
+    "Software Technician",
+    "Security Developer",
+    "Backend Java Developer",
+    "Release Specialist",
+    "Automation Application Engineer",
+    "Object Oriented Programmer",
+    "Windows Software Engineer",
+    "Client Server Programmer",
+    "Engineering Programmer",
+    "Analytic Programmer",
+    "ASPNet Developer",
+    "IT Architecture Analyst",
+    "Mule Developer",
+    "Report Programmer",
+    "SOA Engineer",
+    "Software Jobs",
+    "Oracle Jobs",
+    "Java Jobs",
+    "UX Jobs",
+    "Software Engineering Jobs",
+    "Application Jobs",
+    "Rails Jobs",
+    "Reporting Jobs",
+    "Peoplesoft Jobs",
+    "JavaScript Jobs",
+    "SharePoint Jobs",
+    "Programming Jobs",
+    "DevOps Jobs",
+    "PHP Jobs",
+    "Embedded Software Jobs",
+    "COBOL Jobs",
+    "Software Configuration Jobs",
+    "Lotus Notes Jobs"
+  ],
+  "Software Management": [
+    "Solutions Architect",
+    "Data Architect",
+    "Application Manager",
+    "Enterprise Architect",
+    "Systems Architect",
+    "Scrum Master",
+    "Software Development Manager",
+    "Solution Director",
+    "Director Software Development",
+    "Director Software",
+    "Manager Web",
+    "Director Systems",
+    "Director of User Experience",
+    "User Experience Manager",
+    "Director Web",
+    "Software Product Manager",
+    "Enterprise Data Architect",
+    "Platform Architect",
+    "Delivery Architect",
+    "Application Support Manager",
+    "Domain Architect",
+    "Manager Java",
+    "Enterprise Systems Manager",
+    "Portal Architect",
+    "Program Architect",
+    "Director Enterprise Systems",
+    "Head Of Digital",
+    "Manager Web Application",
+    "Scrum Master"
+  ],
+  "System Analyst": [
+    "Business Analyst",
+    "Business Systems Analyst",
+    "Solution Specialist",
+    "Application Analyst",
+    "Technical Specialist",
+    "Application Support Analyst",
+    "Functional Analyst",
+    "Requirements Analyst",
+    "Financial Systems Analyst",
+    "Engineering Systems Analyst",
+    "Accounting Systems Analyst"
+  ],
+  "Software Quality": [
+    "Software Test Engineer",
+    "Software QA Manager",
+    "Functional Tester",
+    "UAT Tester",
+    "Director Software Quality Assurance",
+    "Systems Test Analyst",
+    "Software Test Technician"
+  ],
+  "System Administrator": [
+    "Systems Engineer",
+    "Systems Administrator",
+    "Systems Specialist",
+    "Webmaster",
+    "Linux System Administrator",
+    "Systems Manager",
+    "Windows Administrator",
+    "Unix Administrator",
+    "Storage Engineer",
+    "Systems Designer",
+    "Exchange Administrator",
+    "Business Systems Manager",
+    "Backup Administrator",
+    "Storage Consultant",
+    "AIX Administrator",
+    "Financial Systems Administrator",
+    "Manager Android",
+    "Mainframe Systems Engineer",
+    "Siebel Administrator",
+    "Linux Jobs",
+    "Unix Jobs"
+  ],
+    "Business Intelligence": [
+        "Business Intelligence Developer",
+        "Data Scientist",
+        "Business Intelligence Analyst",
+        "Big Data Engineer",
+        "Business Intelligence Manager",
+        "Hadoop Developer",
+        "Decision Support Analyst",
+        "Director Business Intelligence",
+        "Master Data Analyst",
+        "Decision Support Manager",
+        "Microstrategy Architect",
+        "Director Decision Support",
+        "Big Data",
+        "Analytics",
+        "Hadoop"
+    ],
+    "Cyber Security": [
+        "Information Security Analyst",
+        "Security Engineer",
+        "Penetration Tester",
+        "Security Architect",
+        "Network Security Engineer",
+        "CISSP",
+        "Information Security Manager",
+        "Information Security Officer",
+        "Security Administrator",
+        "Information Assurance Analyst",
+        "Information Assurance Engineer",
+        "Computer Forensics Analyst",
+        "Director Information Security",
+        "Threat Analyst",
+        "Security Researcher",
+        "Business Continuity Manager",
+        "Security Incident Response Engineer",
+        "Malware Analyst",
+        "Information Assurance Officer",
+        "Information Assurance Manager",
+        "Business Continuity Analyst",
+        "Intrusion Analyst",
+        "Cryptographer",
+        "Network Security",
+        "Information Assurance",
+        "Business Continuity",
+        "Threat",
+        "Computer Forensics"
+    ],
+    "Data Management": [
+        "Data Analyst",
+        "Data Manager",
+        "Data Collector",
+        "Director Data",
+        "Data Coordinator",
+        "Director Information",
+        "Data Reporting Analyst",
+        "Information Management Specialist",
+        "Data Processor",
+        "Data Operations Manager",
+        "Director Data Management",
+        "Data Assistant",
+        "Information Management Officer",
+        "Data Management Engineer",
+        "Data Processing"
+    ],
+    "Database": [
+        "Database Administrator",
+        "Database Developer",
+        "SQL Developer",
+        "Oracle DBA",
+        "Database Analyst",
+        "SQL DBA",
+        "PL SQL Developer",
+        "MySQL DBA",
+        "DB2 DBA",
+        "DBA Manager",
+        "Director Database",
+        "Oracle Database Manager",
+        "Oracle Database Analyst",
+        "Director Oracle Database",
+        "SQL",
+        "Data Warehouse",
+        "Oracle Database",
+        "MS SQL"
+    ],
+    "Game Development": [
+        "Game Designer",
+        "Game Master",
+        "Game Tester",
+        "Director Game",
+        "Manager Video Games",
+        "Game"
+    ],
+    "Geographic IT": [
+        "GIS Analyst",
+        "Geospatial Analyst",
+        "GIS Manager",
+        "GIS Coordinator",
+        "GIS Administrator",
+        "GIS Database Administrator",
+        "GIS Scientist",
+        "Geospatial"
+    ],
+    "Healthcare IT": [
+        "Clinical Systems Analyst",
+        "Imaging Specialist",
+        "Epic Analyst",
+        "EMR Specialist",
+        "EHR Trainer",
+        "Cerner Analyst",
+        "Clinical Application Manager",
+        "Epic Manager",
+        "Director Clinical Applications",
+        "Health Systems Analyst",
+        "Epic Director",
+        "Epic",
+        "Cerner",
+        "Health Informatics",
+        "EMR"
+    ]
+};
 
 let salary = ["1 Lpa"
   , "2 Lpa",

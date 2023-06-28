@@ -21,12 +21,12 @@ import CardContent from '@mui/material/CardContent'
 import { FiEdit2 } from 'react-icons/fi'
 import { GrAdd } from 'react-icons/gr'
 import { MdDelete } from 'react-icons/md'
-import Personal from './PortfolioComponents/PersonalPortfolio'
+// import Personal from './PortfolioComponents/PersonalPortfolio'
 import EducationPortfolio from './PortfolioComponents/EducationPortfolio'
 import ProjectPortfolio from './PortfolioComponents/ProjectPortfolio'
 import ExperiencePortfolio from './PortfolioComponents/ExperiencePortfolio'
 import { useNavigate } from 'react-router-dom'
-import ProfilePic from './PortfolioComponents/PortfolioPic'
+// import ProfilePic from './PortfolioComponents/PortfolioPic'
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -36,7 +36,7 @@ import WbIncandescentSharpIcon from '@mui/icons-material/WbIncandescentSharp';
 import WorkIcon from '@mui/icons-material/Work';
 import EditEducation from './PortfolioComponents/EditEducation'
 import PersonIcon from '@mui/icons-material/Person';
-import About from './PortfolioComponents/AboutMe'
+// import About from './PortfolioComponents/AboutMe'
 import EditExperience from './PortfolioComponents/EditExperience'
 import EditProjects from './PortfolioComponents/EditProjects'
 
@@ -115,53 +115,41 @@ export default function DashboardPortfolio() {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    },)
+    },[userInfo])
 
 
-
-    
 
     //Education Start
     const [eduData, setEduData] = useState([])
 
-    useEffect(() => {
-        getEducation()
-    })
+    // useEffect(() => {
+    //     getEducation()
+    // })
 
-    function getEducation(_id) {
+    // function getEducation(_id) {
 
-        fetch(`http://localhost:8000/education/${_id}`, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        })
-           .then((result) => result.json())
-            .then((resp) => {
-                console.log("resp", resp)
-                setEduData(resp)
-                console.log("eduData", eduData)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }
+    //     fetch(`http://localhost:8000/education/${_id}`, {
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         }
+    //     })
+    //        .then((result) => result.json())
+    //         .then((resp) => {
+    //             console.log("resp", resp)
+    //             setEduData(resp)
+    //             console.log("eduData", eduData)
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //         })
+    // }
 
-    console.log("Education", eduData)
-    //Education End
-
-
-
-
-
-
-
-
+    // console.log("Education", eduData)
+    // //Education End
 
 
     //API End
-
-
 
 
     const [open, setOpen] = React.useState(true);
@@ -260,7 +248,7 @@ export default function DashboardPortfolio() {
                         <Card style={{ width: '80%' }}>
                             <CardContent>
                                 <button
-                                    onClick={() => setPersonal(true)}
+                                    onClick={() => {setPersonal(true);console.log(personal)}}
                                     style={{
                                         float: 'right',
                                         border: 'none',

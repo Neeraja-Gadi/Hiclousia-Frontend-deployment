@@ -32,7 +32,7 @@ function Sec() {
 
                 <div className="smart-tech-image">
                     <div className="image-border">
-                    <img style={imageStyle} src={third} />
+                    <img style={imageStyle}  alt= "third" src={third} />
                         <h1 style={caption}>Hiclousia AI-Talent Acquisition</h1>
                     </div>
                     

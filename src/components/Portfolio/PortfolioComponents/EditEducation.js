@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React  from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import { useNavigate } from 'react-router-dom'
-import baseurl from '../../../baseURL/config'
+// import baseurl from '../../../baseURL/config'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
@@ -72,14 +72,7 @@ const EducationPortfolio = (props) => {
 
     if (!user) Navigate("/login")
 
-    const [userInfo, setUserInfo] = useState([])
-
-
-
-
     // const [eduData, setEduData] = useState([])
-
-
 
     // useEffect(() => {
     //     fetch("http://localhost:8000/education/6419c8f3b7e34600920c71e9").then((resultEdu) => (

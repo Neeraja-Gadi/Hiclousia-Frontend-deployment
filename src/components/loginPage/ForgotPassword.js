@@ -1,15 +1,16 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import { TextField, Button, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom'
+// import Toolbar from '@mui/material/Toolbar';
+// import Typography from '@mui/material/Typography';
+// import AppBar from '@mui/material/AppBar';
+
+
+
+
+// eslint-disable-next-line no-unused-vars
 const user = JSON.parse(localStorage.getItem("userDetails"))
 const ForgotPassword = () => {
-  const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (user == null) {
-  //     navigate("/login")
-  //     alert("Please login first")
-  //   }
-  // })
+ 
   const [email, setEmail] = useState('');
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -41,6 +42,14 @@ const ForgotPassword = () => {
     // Display a success message or handle any errors that occur
   };
   return (
+    // <AppBar position="relative">
+    //     <Toolbar>
+    //       <Typography variant="h6" color="inherit" noWrap>
+    //         Hiclousia
+    //       </Typography>
+    //     </Toolbar>
+    //   </AppBar>
+
     <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: 400, margin: '0 auto' }}>
       <form onSubmit={handleSendLink}>
         <TextField

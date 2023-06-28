@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-import { primarySkills } from '../../../constraints/arrays'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-// import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import Select from 'react-select';
+// import { primarySkills } from '../../../constraints/arrays'
+// import OutlinedInput from '@mui/material/OutlinedInput'
+// import InputLabel from '@mui/material/InputLabel'
+// import FormControl from '@mui/material/FormControl'
+// // import Select from '@mui/material/Select'
+// import MenuItem from '@mui/material/MenuItem'
+// import Select from 'react-select';
 
 
 const userId = JSON.parse(localStorage.getItem('userDetails'));

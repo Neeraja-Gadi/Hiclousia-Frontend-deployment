@@ -38,7 +38,7 @@ export default function JobPost() {
     },)
     // const classes = useStyles();
     const [skillstemplatedata, setSkillstemplatedata] = useState([]);
-    const [setSelectedJobCategory] = useState('');
+    const [selectedJobCategory ,setSelectedJobCategory] = useState('');
     const [jobData, setJobData] = useState([
         {
             userDetailsID: user._id,
@@ -165,14 +165,16 @@ export default function JobPost() {
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           name='jobRole'
-                                      value={job.jobRole}
-                                      onChange={(event) => handleJobChange(event, index)}
+          multiple
+          required
+          value={job.jobRole}
+          onChange={(event) => handleJobChange(event, index)}
      
         //   style={{ width: '100%' }} 
           input={<OutlinedInput label="Job Role" />}
          
         >
-          {jobRoles.map((jobRole,i) => (
+          {jobRoles[selectedJobCategory]?.map((jobRole,i) => (
             <MenuItem
               key={i}
               value={jobRole}

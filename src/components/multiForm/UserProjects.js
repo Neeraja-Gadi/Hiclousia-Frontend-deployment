@@ -35,12 +35,12 @@ const StyledForm = styled('form')(({ theme }) => ({
     margin: '0px 500px',
   },
 }));
-const userId = JSON.parse(localStorage.getItem('userDetails'));
+const user = JSON.parse(localStorage.getItem('userDetails'));
 
 const ProjectForm = (props) => {
   const [projectData, setProjectData] = useState([
     {
-      userDetailsID: userId._id,
+      userDetailsID: user._id,
       projectTitle: '',
       projectType: '',
       description: '',
@@ -55,7 +55,7 @@ const ProjectForm = (props) => {
     const projects = [
       ...projectData,
       {
-        userDetailsID: userId._id,
+        userDetailsID: user._id,
         projectTitle: '',
         projectType: '',
         description: '',
@@ -87,8 +87,6 @@ const ProjectForm = (props) => {
     setProjectData(projects);
   };
 
-
-
   function SaveProject() {
     console.log(projectData)
     let projectInfo = projectData;
@@ -105,7 +103,7 @@ const ProjectForm = (props) => {
         if (data.status === false) return false
         else {
           setProjectData([{
-            userDetailsID: userId._id,
+            userDetailsID: user._id,
             projectTitle: '',
             projectType: '',
             description: '',

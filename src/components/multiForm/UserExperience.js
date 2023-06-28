@@ -39,9 +39,6 @@ const userId = JSON.parse(localStorage.getItem('userDetails'));
 
 const UserExperience = (props) => {
 
-
-
-
   const navigate = useNavigate();
   const [experienceData, setExperienceData] = useState([
     {

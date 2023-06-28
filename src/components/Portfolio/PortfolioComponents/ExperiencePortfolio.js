@@ -13,10 +13,6 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 
 const userId = JSON.parse(localStorage.getItem('userDetails'));
 
-
-
-
-
 const ExperiencePortfolio = (props) => {
 
     const modalWrapper = {
@@ -99,8 +95,8 @@ const ExperiencePortfolio = (props) => {
     function SaveExperience() {
         console.log(experienceData)
         let experienceInfo = experienceData;
-        experienceInfo?.map((e, index) => {
-            fetch("http://localhost:8000/experience", {
+        experienceInfo?.map((e) => {
+          return  fetch("http://localhost:8000/experience", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -118,7 +114,6 @@ const ExperiencePortfolio = (props) => {
                         jobStatus: "Active",
                         jobRole: '',
                         companyType: '',
-                        experienceType: '',
                         skills: [],
                         companyName: '',
                         location: '',

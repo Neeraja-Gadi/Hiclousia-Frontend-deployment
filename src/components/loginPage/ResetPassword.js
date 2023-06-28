@@ -5,9 +5,13 @@ import {useParams} from 'react-router-dom'
 
 const ResetPassword = () => {
   const [password, setPassword] = useState('');
+
+  // eslint-disable-next-line no-unused-vars
   const [passwordError ,setPasswordError ] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('');
   const {id,token} =useParams()
+
+  console.log(id , "id")
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
@@ -18,7 +22,7 @@ const ResetPassword = () => {
     event.preventDefault();
     if (password.length < 8 || password.length > 15) {
       setPasswordError('Password should be between 8 and 15 characters.');
-      return;
+      return passwordError;
     }
     // Check if passwords match
     if (password !== confirmPassword) {
@@ -33,7 +37,7 @@ const ResetPassword = () => {
       },
       body: JSON.stringify({ password }),
     })
-    //
+    
       .then((response) => response.json())
       .then((data) => {
         if (data.status) {
