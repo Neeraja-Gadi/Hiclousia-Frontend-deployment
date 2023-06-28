@@ -79,7 +79,7 @@ const EditExperience = (props) => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         
-    }, [user._id])
+    }, [])
     console.log(userInfo)
 
     const [expData, setExpData] = useState({})
@@ -111,18 +111,11 @@ const EditExperience = (props) => {
 
 //     //API things End
 
-
-
-
-
-    
   
-
     return (
         <div style={modalWrapper}>
             <div style={modalContainer}>
-
-               
+             
                     <div style={feild}>
                     <button style={{float: 'right',border: 'none', backgroundColor: 'transparent'}} 
                         onClick={() => props.experienceInfoEdit(false)} ><RiCloseCircleFill style={{fontSize: '23px', color: 'rgb(22 102 197)'}}/></button>

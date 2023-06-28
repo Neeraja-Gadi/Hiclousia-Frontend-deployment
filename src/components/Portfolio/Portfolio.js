@@ -115,10 +115,9 @@ export default function DashboardPortfolio() {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    } , [user._id])
+    } , [user._id , userInfo])
 
-
-
+    
     //Education Start
     // const [eduData, setEduData] = useState([])
 

@@ -42,7 +42,7 @@ export default function MyPlans() {
                
             })
             .catch((err) => console.log(err));
-    }, [user._id]);
+    }, []);
     console.log(planData);
 
     const recruiterInfo = { ...planData.recruiterInfo };

@@ -79,15 +79,15 @@ useEffect(() => {
       .then(response => response.json())
       .then(data => {
         setRecommendedJobs(data.data);
-        console.log(recommendedJobs);
+        
       })
       .catch(error => {
         console.error(error);
       });
 
-}, [user._id]);
+}, []);
 
-
+console.log(recommendedJobs);
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
