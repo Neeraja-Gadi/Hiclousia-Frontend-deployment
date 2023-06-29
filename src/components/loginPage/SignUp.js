@@ -14,6 +14,8 @@ import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
+import baseurl from '../../baseURL/config';
+
 
 function Copyright(props) {
 
@@ -50,7 +52,7 @@ export default function SignUp() {
     const recruiter = recBox
     const data = { email, password, firstName, lastName, recruiter }
     console.log(data, "dtat")
-    fetch("http://localhost:8000/create", {
+    fetch(`${baseurl}/create`, {
       method: "POST",
       headers: {
         Accept: "application/json",
