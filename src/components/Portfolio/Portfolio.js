@@ -101,24 +101,8 @@ export default function DashboardPortfolio() {
     const user = JSON.parse(localStorage.getItem("userDetails"))
 
     if (!user) Navigate("/login")
-    const [selectedImage, setSelectedImage] = useState(null);
+
     const [userInfo, setUserInfo] = useState([])
-
-
-    // Project start
-    const [editProjects, setEditProjects] = useState(false)
-    const [projectId,setProjectId]=useState(null)
-   
-    const [projectData, setProjectData] = useState({
-        projectTitle:'' ,
-        projectType: '',
-        description: '',
-        startDate: '',
-        endDate: '',
-        url: '',
-        organizationName: '',
-        
-    });
 
     useEffect(() => {
 
@@ -128,16 +112,12 @@ export default function DashboardPortfolio() {
             }
         })
             .then(response => response.json())
-            .then(data => {
-                 setUserInfo(data.data) 
-                console.log("hhh",data.data)
-
-                setSelectedImage(data.data.userprofile[0].profileLink.url)
-            })
+            .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    }  ,[editProjects])
+    } , [user._id , userInfo])
 
+    
     //Education Start
     // const [eduData, setEduData] = useState([])
 
@@ -171,63 +151,12 @@ export default function DashboardPortfolio() {
     //API End
 
 
-    //________________________________________________________
-
-    //
-
-    // const handleImageUpload = async (event) => {
-    //     const file = event.target.files[0];
-    //     const formData = new FormData();
-    //     formData.append('profileLink', file);
-    //     formData.append('userDetailsId', user._id);
-
-    
-       
-    //       await fetch(`http://localhost:8000/SingleImageUpdate/${user._id}`, {
-    //         method: 'PUT',
-    //         body: formData,
-    //       }) .then(response => response.json())
-    //       .then(data => { 
-    //           setSelectedImage(data.data.profileLink.url)
-    //       })
-    //       .catch(err => console.log(err));
-        
-    // }
-
-    const fetchProjectDetails = async (id) => {
-        try {
-          const response = await fetch(`http://localhost:8000/project/${id}`, {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-            },
-          });
-          const data = await response.json();
-          setProjectData(
-            {
-               
-                projectTitle:data.data.projectTitle ,
-                projectType: data.data.projectType,
-                description: data.data.description,
-                startDate:  data.data.startDate,
-                endDate: data.data.endDate,
-                url: data.data.url,
-                organizationName: data.data.organizationName,
-            }
-          );
-          setProjectId(data.data._id)
-        } catch (error) {
-          console.error('Error fetching project details:', error);
-        }
-      };
-    
-// Project End
-
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
     };
+
+
 
     const [personal, setPersonal] = useState(false)
     const [education, setEducation] = useState(false)
@@ -235,7 +164,9 @@ export default function DashboardPortfolio() {
     const [experience, setExperience] = useState(false)
     const [editEducation, setEditEducation] = useState(false)
     const [editExperience, setEditExperience] = useState(false)
+    const [editProjects, setEditProjects] = useState(false)
     // const [about, setAbout] = useState(false)
+
 
     return (
         <ThemeProvider theme={defaultTheme}>
@@ -333,29 +264,10 @@ export default function DashboardPortfolio() {
                                 <ListItem alignItems="center">
 
                                     <ListItemAvatar sx={{ marginTop: '-9px' }}>
-{/*                                         
-                                    {!selectedImage && (
-                                        <Avatar alt="Cindy Baker" sx={{ width: 200, height: 200 }}><PersonIcon sx={{ fontSize: 150, cursor: 'pointer' }} >
-                                            
-                                        </PersonIcon>
-                                        <input type="file" onChange={handleImageUpload} />
-                                        </Avatar>
-                                        )}
-                                        {/* <input type="file" onChange={handleImageUpload} /> */}
-{/*                             
-                                        {selectedImage && (
-                                                        <div>
-                                                        <h3>Preview:</h3>
-                                                        <img src={selectedImage} alt="Selected" ></img>
-                                                        <input type="file" onChange={handleImageUpload} >Change Profile Pic</input>
-                                                        </div>
-                                                        )} */}
- 
-
+                                        <Avatar alt="Cindy Baker" sx={{ width: 200, height: 200 }}><PersonIcon sx={{ fontSize: 150, cursor: 'pointer' }} /></Avatar>
                                     </ListItemAvatar>
 
                                     <ListItemText
-
                                         primary={
                                             <React.Fragment>
                                                 <Typography variant='h4' style={{ fontFamily: "'Lora', sans-serif", marginLeft: '80px' }}>
@@ -588,11 +500,7 @@ export default function DashboardPortfolio() {
                                                 }
                                             />
                                             <button
-                                                onClick={() => {
-                                                    setEditProjects(true);
-                                                    fetchProjectDetails(userInfo.projects[i]._id)
-                                                    
-                                                }}
+                                                onClick={() => setEditProjects(true)}
                                                 style={{
                                                     float: 'right',
                                                     border: 'none',
@@ -600,7 +508,7 @@ export default function DashboardPortfolio() {
                                                     cursor: 'pointer'
                                                 }}><FiEdit2 style={{ float: 'right', fontSize: '20px' }} /></button>
 
-                                            {editProjects && <EditProjects projectId={projectId} projectData={projectData} setProjectData={setProjectData} id={userInfo.projects[i]._id} projectInfoEdit={(status) => setEditProjects(status)} />}
+                                            {editProjects && <EditProjects id={userInfo.projects[i]._id} projectInfoEdit={() => setEditProjects(false)} />}
 
                                         </ListItem>
                                         <Divider variant="inset" component="li" />

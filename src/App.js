@@ -1,9 +1,8 @@
-// import HeroPage from './components/HomePage/HeroPage'
-// import Sec from './components/HomePage/Sec'
-// import Third from './components/HomePage/Third'
-// import Fourth from './components/HomePage/Fourth'
-// import Fifth from './components/HomePage/Fifth'
-import LandingPage from './components//HomePage/Landingpage'
+import HeroPage from './components/HomePage/HeroPage'
+import Sec from './components/HomePage/Sec'
+import Third from './components/HomePage/Third'
+import Fourth from './components/HomePage/Fourth'
+import Fifth from './components/HomePage/Fifth'
 import UserProfile from './components/UserProfile.js'
 import Login from './components/loginPage/Login'
 import SignUp from './components/loginPage/SignUp'
@@ -31,18 +30,18 @@ import Employer from './components/RecruiterProfile/RecruiterProfileComponents/P
 import SearchedItems from './components/Search/SearchComponents/SearchedItems'
 // import Search from './components/Search'
 
+
 function App() {
     return (
         <div>
             <Routes>
                 <Route path="/" element={<>
                     {/* <SearchBar/>  */}
-                    {/* <HeroPage />
+                    <HeroPage />
                     <Sec />
                     <Third />
                     <Fourth />
-                    <Fifth /> */}
-                     <LandingPage />
+                    <Fifth />
                 </>} />
 
                 <Route path="Login" element={<Login />} />
@@ -57,7 +56,7 @@ function App() {
                 <Route path="ProductSearch" element={<ProductSearch />} />
                 <Route path="RecruiterSearch" element={<RecruiterSearch />} />
                 <Route path="RecruiterForm" element={<RecruiterProfileForm />} />
-                <Route path="JobSearch" element={<Dashboard />} />
+                <Route path="SearchPreferences" element={<Dashboard />} />
                 <Route path='SearchResult' element={<SearchResult />} />
                 <Route path='SeacrhedItems' element={<SearchedItems />} />
                 <Route path='Portfolio' element={<DashboardPortfolio />} />
