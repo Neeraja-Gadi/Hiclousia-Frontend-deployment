@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-import { primarySkills } from '../../../constraints/arrays'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-// import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
+// import { primarySkills } from '../../../constraints/arrays'
+// import OutlinedInput from '@mui/material/OutlinedInput'
+// import InputLabel from '@mui/material/InputLabel'
+// import FormControl from '@mui/material/FormControl'
+// // import Select from '@mui/material/Select'
+// import MenuItem from '@mui/material/MenuItem'
 // import Select from 'react-select';
-import Select from '@mui/material/Select'
 
 
 const userId = JSON.parse(localStorage.getItem('userDetails'));
@@ -179,7 +178,6 @@ const ProjectPortfolio = (props) => {
 
                                 name="description"
                                 value={project.description}
-                                fullWidth
                                 id="outlined-multiline-static"
                                 label="Project Description"
                                 onChange={(event) => handleProjectChange(event, index)}
@@ -188,30 +186,6 @@ const ProjectPortfolio = (props) => {
                             />
                         </Box>
                         <br />
-                        <Box>
-                            <FormControl sx={{ m: 3, width: 600 }}>
-                                <InputLabel id="demo-multiple-name-label">Skills Used</InputLabel>
-                                <Select
-                                    name="skills"
-                                    value={project.skills}
-                                    onChange={(event) => handleProjectChange(event, index)}
-                                    labelId="demo-multiple-name-label"
-                                    multiple
-                                    id="demo-multiple-name"
-                                    input={<OutlinedInput />}
-
-                                >
-                                    {primarySkills.map((primarySkill, i) => (
-                                        <MenuItem
-                                            key={i}
-                                            value={primarySkill}
-                                        >
-                                            {primarySkill}
-                                        </MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        </Box>
 
                         <Box
                             mb={1}
@@ -255,13 +229,13 @@ const ProjectPortfolio = (props) => {
                             mb={1}
                             sx={{ m: 3, width: 600 }}
                         >
-                            <TextField fullWidth
-                                label="URL"
+                            <TextField fullWidth label="Project Link"
+
                                 name="url"
-                                variant="outlined"
-                                required
                                 value={project.url}
                                 onChange={(event) => handleProjectChange(event, index)}
+                                id="fullWidth"
+                                required
                             />
                         </Box>
 
@@ -269,22 +243,20 @@ const ProjectPortfolio = (props) => {
                             mb={1}
                             sx={{ m: 3, width: 600 }}
                         >
-                            <TextField fullWidth
-                                label="Organization Name"
+                            <TextField fullWidth label="Organization"
+
                                 name="organizationName"
-                                type="text"
-                                variant="outlined"
-                                required
                                 value={project.organizationName}
                                 onChange={(event) => handleProjectChange(event, index)}
+                                id="fullWidth"
                             />
                         </Box>
 
 
+                
 
 
-
-
+              
 
 
 
