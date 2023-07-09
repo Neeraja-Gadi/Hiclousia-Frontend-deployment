@@ -12,8 +12,6 @@ import { educationLevels, authorities, discipline } from '../../../constraints/a
 import MenuItem from '@mui/material/MenuItem'
 import { RiCloseCircleFill } from 'react-icons/ri'
 
-
-
 const modalWrapper = {
 
     position: 'fixed',

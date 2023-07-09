@@ -8,5 +8,6 @@ import iitmrs from "./iitmrs.jpg"
 import iitmgate from "./iitmgate.jpg"
 import avatar from "./avatar.jpg"
 import Admin from "./Admin.svg"
+import logo from "./hiclousia_logo.jpg"
 
-export { mainimg ,Admin, third , second , asian1 , asian2 , map , iitmrs , iitmgate ,avatar}
+export { mainimg ,Admin, third , second , asian1 , asian2 , map , logo, iitmrs , iitmgate ,avatar}

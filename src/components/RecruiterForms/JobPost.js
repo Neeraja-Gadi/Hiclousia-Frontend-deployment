@@ -3,9 +3,7 @@ import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-
 import Box from '@mui/material/Box';
-
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -15,7 +13,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { jobRoles , jobCategory, experiences, primarySkills ,secondarySkills , sectors , location , salary} from '../../constraints/arrays';
+import { jobRoles , jobCategory,educationLevels, experiences, primarySkills ,secondarySkills , sectors , location , salary} from '../../constraints/arrays';
 
 
 const user = JSON.parse(localStorage.getItem("userDetails"))
@@ -37,11 +35,14 @@ export default function JobPost() {
         }
     },)
     // const classes = useStyles();
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupMessage, setPopupMessage] = useState([]);
     const [skillstemplatedata, setSkillstemplatedata] = useState([]);
     const [selectedJobCategory ,setSelectedJobCategory] = useState('');
     const [jobData, setJobData] = useState([
         {
             userDetailsID: user._id,
+            recruiterPlan :"6481d094f1d3c91f28f54d5d" ,
             jobCategory: "",
             jobRole: [],
             jobDescription: "",
@@ -67,16 +68,31 @@ export default function JobPost() {
             setSelectedJobCategory(value);
         }
     };
+    // async function getSkillsprompt(jobRole) {
+    //     try {
+    //         const response = await fetch(`http://localhost:8000/getskillstemplates?jobProfile=${jobRole}`);
+    //         const data = await response.json();
+    //         setSkillstemplatedata(data.data[0].skills);          
+    //         return skillstemplatedata 
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
+
     async function getSkillsprompt(jobRole) {
-        try {
-            const response = await fetch(`http://localhost:8000/insertskillstemplates?jobProfile=${jobRole}`);
-            const data = await response.json();
-            setSkillstemplatedata(data.data[0].skills);          
-            return skillstemplatedata
-        } catch (err) {
-            console.log(err);
-        }
-    };
+      try {
+        const response = await fetch(`http://localhost:8000/getskillstemplates?jobProfile=${jobRole}`);
+        const data = await response.json();
+        setSkillstemplatedata(data.data[0].skills);
+        setPopupMessage(skillstemplatedata);
+        setShowPopup(true);
+        return skillstemplatedata;
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    
+
     function SaveJob() {
         let info = jobData
         info?.map((e) => {
@@ -156,9 +172,7 @@ export default function JobPost() {
           ))}
         </Select>
       </FormControl>
-
-      
-
+    
       <FormControl sx={{ mt: 1 , width: '100%' }}>
         <InputLabel id="demo-multiple-name-label">Job Role</InputLabel>
         <Select
@@ -185,6 +199,32 @@ export default function JobPost() {
           ))}
         </Select>
       </FormControl>
+      <FormControl sx={{ mt: 1, width: "100%" }}>
+                        <InputLabel id="demo-multiple-name-label">Highest Qualification</InputLabel>
+                        <Select
+                            labelId="demo-multiple-name-label"
+                            id="demo-multiple-name"
+                            multiple
+                            required
+                            maxItem={3}
+                            name='highestEducation'
+                            value={job.highestEducation}
+                            onChange={(event) => handleJobChange(event, index)}
+
+                            input={<OutlinedInput label="Highest Qualification" />}
+
+                        >
+                            {educationLevels.map((educationLevel) => (
+                                <MenuItem
+                                    key={educationLevel}
+                                    value={educationLevel}
+
+                                >
+                                    {educationLevel}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
 
 
       <FormControl sx={{ mt: 1 , width: '100%' }}>
@@ -193,8 +233,11 @@ export default function JobPost() {
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           input={<OutlinedInput label="Experience" />}
+          name="experience"
           value={job.experience}
-                                      onChange={(event) => handleJobChange(event, index)}
+          multiple
+          required
+          onChange={(event) => handleJobChange(event, index)}
          
         >
           {experiences.map((experience,i) => (
@@ -209,23 +252,22 @@ export default function JobPost() {
         </Select>
       </FormControl>
 
-      <FormControl sx={{ mt: 1 , width: '100%' }}>
+      {/* <FormControl sx={{ mt: 1 , width: '100%' }}>
         <InputLabel id="demo-multiple-name-label">Primary Skills</InputLabel>
         <Select
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           input={<OutlinedInput label="Primary Skills" />}
           name='primarySkills'
-                                      value={job.primarySkills}
-                                      // onChange={(event) => handleJobChange(event, index)}
-                                      onChange={async (event) => {
-                                          let skill = await getSkillsprompt(job.jobRole);
-                                          // console.log("skill", skill)
-                                          alert(skill)
-                                          handleJobChange(event, index)
-                                      }}
+          value={job.primarySkills}
+          multiple
+          required         
+          onChange={async (event) => {
+          let skill = await getSkillsprompt(job.jobRole);
+          alert(skill)
+          handleJobChange(event, index)
+          }}
        
-         
         >
           {primarySkills.map((primarySkill,i) => (
             <MenuItem
@@ -237,7 +279,38 @@ export default function JobPost() {
             </MenuItem>
           ))}
         </Select>
-      </FormControl>
+      </FormControl> */}
+
+<FormControl sx={{ mt: 1, width: '100%' }}>
+  <InputLabel id="demo-multiple-name-label">Primary Skills</InputLabel>
+  <Select
+    labelId="demo-multiple-name-label"
+    id="demo-multiple-name"
+    input={<OutlinedInput label="Primary Skills" />}
+    name="primarySkills"
+    value={job.primarySkills}
+    multiple
+    required
+    onFocus={() => setShowPopup(true)}
+    onBlur={() => setShowPopup(false)}
+    onChange={async (event) => {
+      await getSkillsprompt(job.jobRole);
+      handleJobChange(event, index);
+    }}
+  >
+    {primarySkills.map((primarySkill, i) => (
+      <MenuItem key={i} value={primarySkill}>
+        {primarySkill}
+      </MenuItem>
+    ))}
+  </Select>
+</FormControl>
+
+     {showPopup && (
+         <div style={{ background: 'cyan', padding: '10px', marginTop: '10px' }}>
+            {popupMessage}
+          </div>
+      )}
 
       <FormControl sx={{ mt: 1 , width: '100%' }}>
         <InputLabel id="demo-multiple-name-label">Secondary Skills</InputLabel>
@@ -246,10 +319,11 @@ export default function JobPost() {
           id="demo-multiple-name"
           input={<OutlinedInput label="Secondary Skills" />}
           name='secondarySkills'
-                                      value={job.secondarySkills}
-                                      onChange={(event) => handleJobChange(event, index)}
-          
-         
+          value={job.secondarySkills}
+          multiple
+          required
+          onChange={(event) => handleJobChange(event, index)}
+           
         >
           {secondarySkills.map((secondarySkill,i) => (
             <MenuItem
@@ -270,10 +344,9 @@ export default function JobPost() {
           id="demo-multiple-name"
           input={<OutlinedInput label="Sector" />}
           name='sector'
-                                      value={job.sector}
-                                      onChange={(event) => handleJobChange(event, index)}
-       
-         
+          value={job.sector}
+          onChange={(event) => handleJobChange(event, index)}
+              
         >
           {sectors.map((sector,i) => (
             <MenuItem
@@ -315,9 +388,8 @@ export default function JobPost() {
           id="outlined-multiline-flexible"
           label="Job Description"
           name='jobDescription'
-                                      value={job.jobDescription}
-                                    onChange={(event) => handleJobChange(event, index)}
-      
+          value={job.jobDescription}
+          onChange={(event) => handleJobChange(event, index)}
           maxRows={4}
         />
 
@@ -327,6 +399,7 @@ export default function JobPost() {
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           input={<OutlinedInput label="Salary" />}
+          name = "salary"
           value={job.salary}
           onChange={(event) => handleJobChange(event, index)}   
          
@@ -342,9 +415,6 @@ export default function JobPost() {
           ))}
         </Select>
       </FormControl>
-
-
-
 
 
             <Button

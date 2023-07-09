@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { useNavigate, Link } from "react-router-dom"
-import SearchIcon from '@mui/icons-material/Search';
+// import SearchIcon from '@mui/icons-material/Search';  
 const Navbar = () => {
 
     const [user, setUser] = React.useState("");
@@ -56,7 +56,7 @@ const Navbar = () => {
       
        <ul>
        <div className='search-Icon'> </div>
-                {
+                {/* {
             user?
 
               user?.recruiter === false?
@@ -66,14 +66,23 @@ const Navbar = () => {
             
             :null
      
-          }
+          } */}
+
 
          {/* <li><a href="#t">Talent Profile</a></li> */}
-         {user && user.recruiter === true ?
-         <li><Link to="/SubscriptionModal">Recruiter</Link></li> 
+         
+         {/* {user && user.recruiter === true ?
+         <li><Link to="/SubscriptionModal">Post A Job</Link></li> 
          : 
-         <li><Link to="/login" >Recruiter</Link></li> 
-        }
+         <li><Link to="/login" >Post A Job</Link></li> 
+        } */}
+
+        {user ? 
+          user.recruiter === true ? <li><Link to="/SubscriptionModal">Post A Job</Link></li> 
+          : <li><Link to="/JobSearch" >JobSearch</Link></li> 
+         
+        : null
+      }
          
          <li><Link>About Us</Link></li>
          <li><Link>Contact Us</Link></li>
