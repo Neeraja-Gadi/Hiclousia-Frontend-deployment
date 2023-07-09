@@ -17,6 +17,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import { useNavigate } from 'react-router-dom';
 import CardHeader from '@mui/material/CardHeader';
+import {logo} from '../../../images/index.js';
 
 const user = JSON.parse(localStorage.getItem('userDetails'));
 
@@ -65,8 +66,8 @@ export default function MyPlans() {
                     <ListItem alignItems="flex-start" marginLeft="10px">
                         <ListItemAvatar marginTop="-7px">
                             <Avatar
-                                alt="Remy Sharp"
-                                src="/static/images/avatar/1.jpg"
+                                alt="logo"
+                                src={logo}
                                 sx={{ width: 130, height: 130 }}
                             />
                         </ListItemAvatar>
